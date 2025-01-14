@@ -1,3 +1,3 @@
- MyRepo
-This is my first repository created using Git and GitHub.
+#### COMP2156 – Developer Operations
+
 
