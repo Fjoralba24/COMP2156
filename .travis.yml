@@ -1,11 +1,16 @@
-dist: focal  # Use Ubuntu 20.04 (which has the required libraries)
+dist: focal  # Use Ubuntu 20.04 (compatible with latest Node.js and npm)
 language: node_js
 node_js:
   - "lts/*"  # Use the latest long-term support version of Node.js
+
 install:
-  - npm install
+  - npm install  # Install project dependencies
+
 script:
-  - npm test
+  - npm -v  # Check npm version
+  - npm install  # Install dependencies
+  - npm test  # Run tests
+
 deploy:
   provider: pages
   skip_cleanup: true
