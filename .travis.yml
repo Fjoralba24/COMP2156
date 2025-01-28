@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "lts/*"  # Use the latest long-term support version of Node.js
+install:
+  - npm install
+script:
+  - npm test
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: build
+  on:
+    branch: main
