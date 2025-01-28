@@ -1,3 +1,4 @@
+dist: focal  # Use Ubuntu 20.04 (which has the required libraries)
 language: node_js
 node_js:
   - "lts/*"  # Use the latest long-term support version of Node.js
