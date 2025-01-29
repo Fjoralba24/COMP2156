@@ -4,6 +4,11 @@ node_js:
 
 dist: focal
 
+before_install:
+  - rm -rf ~/.rvm
+  - rm -rf ~/.rbenv
+  - sudo apt-get remove --purge ruby
+
 deploy:
   provider: pages
   skip_cleanup: true
