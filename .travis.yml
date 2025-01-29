@@ -1,20 +1,17 @@
-dist: focal  # Use Ubuntu 20.04 (compatible with latest Node.js and npm)
 language: node_js
 node_js:
-  - "lts/*"  # Use the latest long-term support version of Node.js
+  - "stable"
 
-install:
-  - npm install  # Install project dependencies
+dist: focal
 
-script:
-  - npm -v  # Check npm version
-  - npm install  # Install dependencies
-  - npm test  # Run tests
+before_deploy:
+  - gem install bundler
+  - bundler update
 
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: $GITHUB_TOKEN
+  github_token: $github_token
   local_dir: build
   on:
     branch: main
