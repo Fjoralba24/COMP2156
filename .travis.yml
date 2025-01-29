@@ -4,10 +4,6 @@ node_js:
 
 dist: focal
 
-before_deploy:
-  - gem install bundler
-  - bundler update
-
 deploy:
   provider: pages
   skip_cleanup: true
