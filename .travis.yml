@@ -9,10 +9,17 @@ before_install:
   - rm -rf ~/.rbenv
   - sudo apt-get remove --purge ruby
 
+script:
+  - echo "Building the project..."
+  - mkdir -p build
+  - echo "<h1>Deployed via Travis CI</h1>" > build/index.html
+
+after_success:
+  - echo "Build successful, preparing deployment..."
+
 deploy:
-  provider: pages
+  provider: script
+  script: bash ./deploy.sh
   skip_cleanup: true
-  github_token: $github_token
-  local_dir: build
   on:
     branch: main
