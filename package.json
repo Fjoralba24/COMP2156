@@ -8,5 +8,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "Triggering GitHub Actions Triggering GitHub Actions",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fjoralba24/COMP2156.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Fjoralba24/COMP2156/issues"
+  },
+  "homepage": "https://github.com/Fjoralba24/COMP2156#readme"
 }

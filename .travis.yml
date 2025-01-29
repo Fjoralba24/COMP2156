@@ -9,10 +9,14 @@ before_install:
   - rm -rf ~/.rbenv
   - sudo apt-get remove --purge ruby
 
+install:
+  - npm install
+
 script:
   - echo "Building the project..."
   - mkdir -p build
   - echo "<h1>Deployed via Travis CI</h1>" > build/index.html
+  - npm test
 
 after_success:
   - echo "Build successful, preparing deployment..."
