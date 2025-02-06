@@ -1,25 +1,26 @@
-import React, { Component } from 'react';
 import './App.css';
-import Sidebar from './components/sidebar'
-import Introduction from './components/introduction'
-import About from './components/about'
-import Timeline from './components/timeline'
+import React, { useState } from "react";
+import StudentForm from "./components/StudentForm";
+import StudentList from "./components/StudentList";
 
-class App extends Component {
-  render() {
-    return (
-      <div id="colorlib-page">
-        <div id="container-wrap">
-         	<Sidebar></Sidebar>
-          <div id="colorlib-main">
-            <Introduction></Introduction>
-            <About></About>
-            <Timeline></Timeline>
-          </div>
-      	</div>
-      </div>
-    );
-  }
-}
+const App = () => {
+  const [students, setStudents] = useState([]);
+
+  const addStudent = (student) => {
+    setStudents([...students, student]);
+  };
+
+  return (
+    <div className="App">
+      <h1>Studen ID: 101481244</h1>
+      <h1>Studen ID: Put Your Student Name</h1>
+      <h1>Student Information System</h1>
+      <h5>Powered By: moxDroid Labs Inc. || DevOps</h5>
+      <StudentForm addStudent={addStudent} />
+      Developerd By: Pritesh Patel
+      <StudentList students={students} />
+    </div>
+  );
+};
 
 export default App;
